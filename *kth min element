@@ -1,0 +1,27 @@
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int kthSmallest(int arr[], int l, int r, int k) {
+        //code here
+        for (int i = l; i <=r; i++)
+ {
+        // Last i elements are already in place
+        for (int j = l; j <= r- i ; j++)
+        {
+            if (arr[j] > arr[j + 1])
+               
+                { int temp=arr[j];
+    arr[j]=arr[j+1];
+    arr[j+1]=temp;}
+}
+
+    }return arr[l+k-1];}
+int main()
+{
+   int arr[] ={1, 23, 12, 9, 30 ,2 ,50 };
+    cout<<kthSmallest(arr,0,6,3);
+
+    return 0;
+}
