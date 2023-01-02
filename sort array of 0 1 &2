@@ -1,0 +1,27 @@
+class Solution
+{
+    public:
+    void sort012(int a[], int n)
+    {
+        // code here 
+        int i=0;int j=n-1;int temp;int c=0,d=0,e=0;
+        int b[n];
+        for( i=0;i<n;i++)
+        {
+            if(a[i]==0)c++;
+            if(a[i]==1)d++;
+            if(a[i]==2)e++;
+        }
+        for( i=0;i<n;i++)
+        {
+            if(i<c)
+             a[i]=0;
+             if(i<(c+d)&& i>=c)
+              a[i]=1;
+              if(i<(c+d+e)&& i>=(c+d))
+                a[i]=2;
+        }
+    }
+    
+};
+//or u can also do it with 3 pointers
