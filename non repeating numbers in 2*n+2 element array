@@ -1,0 +1,40 @@
+vector<int> singleNumber(vector<int> nums) 
+    {
+        // Code here.
+        int n=nums.size();
+         int sum=0;int b[n],c=0,d[n],e=0,num1=0,num2=0;
+    for(int i=0;i<n;i++)
+    {
+        sum=sum^nums[i];
+    }
+    int pos=0;
+    while((sum&(1<<pos))==0)
+    {
+        pos++;
+    }
+    for(int i=0;i<n;i++)
+    {
+        if((nums[i]&(1<<pos))>0)
+        {
+            b[c++]=nums[i];
+        }
+        else
+        d[e++]=nums[i];
+    }
+    for(int i=0;i<c;i++)
+    {
+        num1=num1^b[i];
+    }
+    for(int i=0;i<e;i++)
+    {
+        num2=num2^d[i];
+    }
+    if(num1>num2)
+    {
+        return {num2,num1};
+    }
+    else 
+    {
+        return {num1,num2};
+    }
+    }
