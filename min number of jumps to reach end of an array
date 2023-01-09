@@ -1,0 +1,27 @@
+  int minJumps(int a[], int n){
+        // Your code here
+        int maxr=a[0];
+ int step=a[0];
+ int jump=1;
+ if(n==1)
+  return 0;
+ else if(a[0]==0)
+  return -1;
+ else
+ {
+  for(int i=1;i<n;i++)
+   {
+    if(i==n-1)                 //whn it reaches the end
+     return jump;
+   
+    maxr=max(maxr,i+a[i]);       
+    step--;
+    if(step==0)
+       {  jump++;
+          if(i>=maxr)          //to check if any of the numbers we hav crossed can make it move further
+              return -1;
+          step=maxr-i;
+       }
+     }
+   }
+    }
