@@ -1,0 +1,22 @@
+int smallestSubWithSum(int a[], int n, int x)
+    {
+        // Your code goes here   
+        int sum=0;int c=n+1;int e=0,i=0;
+        while(e<n)
+        {
+            while(sum<=x && e<n)
+            {
+                sum+=a[e];
+                e++;
+            }
+            while(sum>x && i<n)
+            { 
+                if((e-i)<c)
+                 c=e-i;
+                sum-=a[i];
+                i++;
+            }
+           
+        }
+        return c;
+    }
