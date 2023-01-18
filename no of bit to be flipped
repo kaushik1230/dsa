@@ -6,7 +6,7 @@ int countBitsFlip(int a, int b){
         // Your logic here
         while(a>0 || b>0)
         {
-            if(a&1 == b&1)        //while debugging its not entering this for loop as expected
+            if((a&1) == (b&1))        //while debugging its not entering this for loop as expected
             {
             }
             else
