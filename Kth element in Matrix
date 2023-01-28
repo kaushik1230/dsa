@@ -1,0 +1,26 @@
+int kthSmallest(int mat[MAX][MAX], int n, int k)
+{
+  //Your code here
+  int a[k];
+  int b[n]={0};
+  int z=0;
+  int min;int j;
+  while(z<k)
+  {
+      min=INT_MAX;
+      for(int i=0;i<n;i++)
+      {   if(b[i]>=n)
+          {
+    
+          }
+          else if(mat[i][b[i]]<min)
+          {
+              min=mat[i][b[i]];
+             j=i;
+          }
+      }
+      a[z++]=min;
+      b[j]+=1;
+  }
+  return a[k-1];
+}
